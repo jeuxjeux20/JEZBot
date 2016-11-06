@@ -1,0 +1,50 @@
+﻿<Window x:Class="EZBotWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EZBotWPF"
+        mc:Ignorable="d"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
+        Title="EZBot v1.0 - By Epic and TheRandomMelon" Height="225" Width="400" MinHeight="175" MinWidth="350">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="34*"/>
+            <RowDefinition Height="77*"/>
+        </Grid.RowDefinitions>
+        <Viewbox Margin="5,0">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                <Label x:Name="label" Content="Discord Bot Token" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                <TextBox x:Name="Token" TextWrapping="Wrap" MinWidth="150" />
+            </StackPanel>
+        </Viewbox>
+        <!-- Discord bot token -->
+        <Viewbox Grid.Row="1" Margin="5,0">
+            <StackPanel Orientation="Horizontal" >
+                <Label x:Name="label1" Content="Prefix" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                <TextBox x:Name="prefix" TextWrapping="Wrap" Text="!" MinWidth="150" MaxLength="1"/>
+            </StackPanel>
+        </Viewbox>
+        <!-- Prefix -->
+        <Viewbox Grid.Row="2" Margin="0,2,0,0">
+            <StackPanel Orientation="Horizontal">
+                <CheckBox x:Name="sayCmdEnable" Content="Say command" VerticalAlignment="Center"  Checked="sayCmdEnable_Checked" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,0,15,0"/>
+                <CheckBox x:Name="catCmdEnable" Content="Cat command" VerticalAlignment="Center" />
+            </StackPanel>
+        </Viewbox>
+        <!-- Checkboxes -->
+        <Grid VerticalAlignment="Center" Grid.Row="3" Margin="10,6" Height="51">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="255*"/>
+                <ColumnDefinition Width="164*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="start" Content="Start Bot" Height="51"  VerticalAlignment="Bottom" Width="auto" Click="start_Click" Margin="0,0,5,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Button x:Name="test" Content="Random.cat test" Height="51" VerticalAlignment="Bottom" Width="auto" Click="test_Click" Grid.Column="1"/>
+        </Grid>
+        <!--Start bot and random cat test-->
+    </Grid>
+</Window>
